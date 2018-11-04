@@ -43,7 +43,7 @@ module.exports = function setupParentApp(options = {}) {
     parentApp.use(urlUtils.getApiPath({version: 'v2', type: 'admin'}), require('./api/v2/admin/app')());
 
     // ADMIN
-    parentApp.use('/ghost', require('./admin')());
+    parentApp.use('/reborn', require('./admin')());
 
     // BLOG
     parentApp.use(require('./site')(options));

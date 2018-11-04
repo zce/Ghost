@@ -313,9 +313,9 @@ function urlFor(context, data, absolute) {
         urlPath = getAdminUrl() || getBlogUrl();
 
         if (absolute) {
-            urlPath += 'ghost/';
+            urlPath += 'reborn/';
         } else {
-            urlPath = '/ghost/';
+            urlPath = '/reborn/';
         }
     } else if (context === 'api') {
         urlPath = getAdminUrl() || getBlogUrl();

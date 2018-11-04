@@ -46,7 +46,7 @@ describe('parent app', function () {
         use.calledWith('/ghost/api/v0.1/').should.be.true();
         use.calledWith('/ghost/api/v2/content/').should.be.true();
         use.calledWith('/ghost/api/v2/admin/').should.be.true();
-        use.calledWith('/ghost').should.be.true();
+        use.calledWith('/reborn').should.be.true();
 
         apiV01Spy.called.should.be.true();
         apiContentV2Spy.called.should.be.true();

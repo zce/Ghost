@@ -117,8 +117,8 @@ describe('Url', function () {
 
         it('should handle subdir matching tld', function () {
             configUtils.set({url: 'http://ghost.blog/blog'});
-            urlService.utils.urlJoin('ghost.blog/blog', 'ghost/').should.equal('ghost.blog/blog/ghost/');
-            urlService.utils.urlJoin('ghost.blog', 'blog', 'ghost/').should.equal('ghost.blog/blog/ghost/');
+            urlService.utils.urlJoin('ghost.blog/blog', 'reborn/').should.equal('ghost.blog/blog/reborn/');
+            urlService.utils.urlJoin('ghost.blog', 'blog', 'reborn/').should.equal('ghost.blog/blog/reborn/');
         });
     });
 
@@ -348,7 +348,7 @@ describe('Url', function () {
                 url: 'http://my-ghost-blog.com'
             });
 
-            urlService.utils.urlFor('admin').should.equal('/ghost/');
+            urlService.utils.urlFor('admin').should.equal('/reborn/');
         });
 
         it('admin: url is http', function () {
@@ -356,7 +356,7 @@ describe('Url', function () {
                 url: 'http://my-ghost-blog.com'
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('http://my-ghost-blog.com/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('http://my-ghost-blog.com/reborn/');
         });
 
         it('admin: custom admin url is set', function () {
@@ -367,7 +367,7 @@ describe('Url', function () {
                 }
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('https://admin.my-ghost-blog.com/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('https://admin.my-ghost-blog.com/reborn/');
         });
 
         it('admin: blog is on subdir', function () {
@@ -375,7 +375,7 @@ describe('Url', function () {
                 url: 'http://my-ghost-blog.com/blog'
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('http://my-ghost-blog.com/blog/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('http://my-ghost-blog.com/blog/reborn/');
         });
 
         it('admin: blog is on subdir', function () {
@@ -383,7 +383,7 @@ describe('Url', function () {
                 url: 'http://my-ghost-blog.com/blog/'
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('http://my-ghost-blog.com/blog/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('http://my-ghost-blog.com/blog/reborn/');
         });
 
         it('admin: blog is on subdir', function () {
@@ -391,7 +391,7 @@ describe('Url', function () {
                 url: 'http://my-ghost-blog.com/blog'
             });
 
-            urlService.utils.urlFor('admin').should.equal('/blog/ghost/');
+            urlService.utils.urlFor('admin').should.equal('/blog/reborn/');
         });
 
         it('admin: blog is on subdir', function () {
@@ -402,7 +402,7 @@ describe('Url', function () {
                 }
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/reborn/');
         });
 
         it('admin: blog is on subdir', function () {
@@ -413,7 +413,7 @@ describe('Url', function () {
                 }
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/reborn/');
         });
 
         it('admin: blog is on subdir', function () {
@@ -424,7 +424,7 @@ describe('Url', function () {
                 }
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/reborn/');
         });
 
         it('admin: blog is on subdir', function () {
@@ -435,7 +435,7 @@ describe('Url', function () {
                 }
             });
 
-            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/ghost/');
+            urlService.utils.urlFor('admin', true).should.equal('http://something.com/blog/reborn/');
         });
 
         ['deprecated', 'active', 'v0.1', 'v2'].forEach((apiVersion) => {
@@ -746,7 +746,7 @@ describe('Url', function () {
 
             res.redirect = function (code, path) {
                 code.should.equal(301);
-                path.should.eql('/ghost/#/my/awesome/path/');
+                path.should.eql('/reborn/#/my/awesome/path/');
                 res.set.calledWith({'Cache-Control': 'public, max-age=' + constants.ONE_YEAR_S}).should.be.true();
 
                 done();
@@ -761,7 +761,7 @@ describe('Url', function () {
             res.set = sinon.spy();
 
             res.redirect = function (path) {
-                path.should.eql('/ghost/#/my/awesome/path/');
+                path.should.eql('/reborn/#/my/awesome/path/');
                 res.set.called.should.be.false();
 
                 done();

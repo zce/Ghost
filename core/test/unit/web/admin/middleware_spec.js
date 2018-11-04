@@ -24,17 +24,17 @@ describe('Admin App', function () {
             });
 
             it('should redirect a url which starts with ghost', function () {
-                req.originalUrl = '/ghost/x';
+                req.originalUrl = '/reborn/x';
 
                 redirectAdminUrls(req, res, next);
 
                 next.called.should.be.false();
                 res.redirect.called.should.be.true();
-                res.redirect.calledWith('/ghost/#/x').should.be.true();
+                res.redirect.calledWith('/reborn/#/x').should.be.true();
             });
 
-            it('should not redirect /ghost/ on its owh', function () {
-                req.originalUrl = '/ghost/';
+            it('should not redirect /reborn/ on its owh', function () {
+                req.originalUrl = '/reborn/';
 
                 redirectAdminUrls(req, res, next);
 
@@ -43,7 +43,7 @@ describe('Admin App', function () {
             });
 
             it('should not redirect url that has no slash', function () {
-                req.originalUrl = 'ghost/x';
+                req.originalUrl = 'reborn/x';
 
                 redirectAdminUrls(req, res, next);
 
@@ -51,8 +51,8 @@ describe('Admin App', function () {
                 res.redirect.called.should.be.false();
             });
 
-            it('should not redirect url that starts with something other than /ghost/', function () {
-                req.originalUrl = 'x/ghost/x';
+            it('should not redirect url that starts with something other than /reborn/', function () {
+                req.originalUrl = 'x/reborn/x';
 
                 redirectAdminUrls(req, res, next);
 
