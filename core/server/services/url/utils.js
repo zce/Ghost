@@ -6,7 +6,7 @@ const moment = require('moment-timezone'),
     cheerio = require('cheerio'),
     config = require('../../config'),
     settingsCache = require('../settings/cache'),
-    BASE_API_PATH = '/ghost/api/',
+    BASE_API_PATH = '/api/',
     STATIC_IMAGE_URL_PREFIX = 'content/images';
 
 /**

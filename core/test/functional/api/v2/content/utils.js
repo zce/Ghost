@@ -1,6 +1,6 @@
 const url = require('url');
 const _ = require('lodash');
-const API_URL = '/ghost/api/v2/content/';
+const API_URL = '/api/v2/content/';
 
 module.exports = {
     API: {

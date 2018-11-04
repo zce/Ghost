@@ -43,9 +43,9 @@ describe('parent app', function () {
     it('should mount 5 apps and assign correct routes to them', function () {
         parentApp();
 
-        use.calledWith('/ghost/api/v0.1/').should.be.true();
-        use.calledWith('/ghost/api/v2/content/').should.be.true();
-        use.calledWith('/ghost/api/v2/admin/').should.be.true();
+        use.calledWith('/api/v0.1/').should.be.true();
+        use.calledWith('/api/v2/content/').should.be.true();
+        use.calledWith('/api/v2/admin/').should.be.true();
         use.calledWith('/ghost').should.be.true();
 
         apiV01Spy.called.should.be.true();

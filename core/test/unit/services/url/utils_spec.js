@@ -440,7 +440,7 @@ describe('Url', function () {
 
         ['deprecated', 'active', 'v0.1', 'v2'].forEach((apiVersion) => {
             function getApiPath(options) {
-                const baseAPIPath = '/ghost/api/';
+                const baseAPIPath = '/api/';
 
                 switch (options.version) {
                     case 'deprecated':
@@ -601,7 +601,7 @@ describe('Url', function () {
                 url: 'https://my-ghost-blog.com'
             });
 
-            urlService.utils.urlFor('api', {cors: true, version: "active", versionType: 'content'}, true).should.eql('https://my-ghost-blog.com/ghost/api/v2/content/');
+            urlService.utils.urlFor('api', {cors: true, version: "active", versionType: 'content'}, true).should.eql('https://my-ghost-blog.com/api/v2/content/');
         });
 
         it('api: with active version and admin true, blog url is https: should return active admin api path', function () {
@@ -609,7 +609,7 @@ describe('Url', function () {
                 url: 'https://my-ghost-blog.com'
             });
 
-            urlService.utils.urlFor('api', {cors: true, version: "active", versionType: 'admin'}, true).should.eql('https://my-ghost-blog.com/ghost/api/v2/admin/');
+            urlService.utils.urlFor('api', {cors: true, version: "active", versionType: 'admin'}, true).should.eql('https://my-ghost-blog.com/api/v2/admin/');
         });
     });
 
