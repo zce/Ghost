@@ -32,8 +32,8 @@ module.exports = function setupSiteApp(options = {}) {
     // see https://github.com/TryGhost/Ghost/issues/7707
     shared.middlewares.customRedirects.use(siteApp);
 
-    // More redirects
-    siteApp.use(shared.middlewares.adminRedirects());
+    // // More redirects
+    // siteApp.use(shared.middlewares.adminRedirects());
 
     // force SSL if blog url is set to https. The redirects handling must happen before asset and page routing,
     // otherwise we serve assets/pages with http. This can cause mixed content warnings in the admin client.
