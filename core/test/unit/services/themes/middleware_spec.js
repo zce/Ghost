@@ -100,7 +100,8 @@ describe('Themes', function () {
                     'url', 'title', 'description', 'logo', 'cover_image', 'icon', 'twitter', 'facebook', 'navigation',
                     'timezone', 'amp'
                 ],
-                updateOptionsStub;
+                updateOptionsStub,
+                configStub;
 
             beforeEach(function () {
                 updateOptionsStub = sandbox.stub(hbs, 'updateTemplateOptions');
@@ -108,9 +109,11 @@ describe('Themes', function () {
                 settingsCacheStub.withArgs('title').returns('Bloggy McBlogface');
                 settingsCacheStub.withArgs('labs').returns({});
 
-                getActiveThemeStub.returns({
-                    config: sandbox.stub().returns(2)
-                });
+                configStub = sandbox.stub();
+                configStub.withArgs('posts_per_page').returns(2);
+                configStub.returns({posts_per_page: 2});
+
+                getActiveThemeStub.returns({config: configStub});
             });
 
             it('calls updateTemplateOptions with correct data', function (done) {

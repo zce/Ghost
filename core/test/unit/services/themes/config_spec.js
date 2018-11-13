@@ -29,10 +29,10 @@ describe('Themes', function () {
             config.should.eql({posts_per_page: 3});
         });
 
-        it('handles ignores non-allowed config', function () {
+        it('handles package.json theme custom config', function () {
             var config = themeConfig.create({name: 'casper', config: {magic: 'roundabout'}});
 
-            config.should.eql({posts_per_page: 5});
+            config.should.eql({posts_per_page: 5, magic: 'roundabout'});
         });
     });
 });

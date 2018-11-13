@@ -84,7 +84,7 @@ class ActiveTheme {
     }
 
     config(key) {
-        return this._config[key];
+        return key ? this._config[key] : this._config;
     }
 
     engine(key) {

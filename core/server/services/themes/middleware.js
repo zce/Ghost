@@ -70,7 +70,7 @@ themeMiddleware.updateTemplateData = function updateTemplateData(req, res, next)
     }
 
     if (activeTheme.get()) {
-        themeData.posts_per_page = activeTheme.get().config('posts_per_page');
+        themeData = _.assign(themeData, activeTheme.get().config());
     }
 
     // Request-specific information
