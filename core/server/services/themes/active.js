@@ -15,6 +15,7 @@ var join = require('path').join,
     _ = require('lodash'),
     themeConfig = require('./config'),
     themeEngines = require('./engines'),
+    registerThemeHelpers = require('./helpers'),
     config = require('../../config'),
     engine = require('./engine'),
     // Current instance of ActiveTheme
@@ -49,6 +50,9 @@ class ActiveTheme {
 
         // Create a theme engines object
         this._engines = themeEngines.create(this._packageInfo);
+
+        // Register theme helpers
+        registerThemeHelpers(this._path);
     }
 
     get name() {
