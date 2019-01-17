@@ -38,7 +38,7 @@ describe('parent app', function () {
         parentApp();
 
         use.calledWith('/ghost/api').should.be.true();
-        use.calledWith('/ghost').should.be.true();
+        use.calledWith('/reborn').should.be.true();
 
         apiSpy.called.should.be.true();
         adminSpy.called.should.be.true();

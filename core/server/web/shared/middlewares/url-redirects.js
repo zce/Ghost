@@ -37,14 +37,14 @@ _private.getAdminRedirectUrl = (options) => {
     const queryParameters = options.queryParameters;
     const secure = options.secure;
 
-    debug('getAdminRedirectUrl', requestedHost, requestedUrl, adminHostWithoutProtocol, blogHostWithoutProtocol, urlService.utils.urlJoin(blogHostWithoutProtocol, 'ghost/'));
+    debug('getAdminRedirectUrl', requestedHost, requestedUrl, adminHostWithoutProtocol, blogHostWithoutProtocol, urlService.utils.urlJoin(blogHostWithoutProtocol, 'reborn/'));
 
     // CASE: we only redirect the admin access if `admin.url` is configured
     // If url and admin.url are not equal AND the requested host does not match, redirect.
     // The first condition is the most important, because it ensures that you have a custom admin url configured,
     // because we don't force an admin redirect if you have a custom url configured, but no admin url.
-    if (adminHostWithoutProtocol !== urlService.utils.urlJoin(blogHostWithoutProtocol, 'ghost/') &&
-        adminHostWithoutProtocol !== urlService.utils.urlJoin(requestedHost, urlService.utils.getSubdir(), 'ghost/')) {
+    if (adminHostWithoutProtocol !== urlService.utils.urlJoin(blogHostWithoutProtocol, 'reborn/') &&
+        adminHostWithoutProtocol !== urlService.utils.urlJoin(requestedHost, urlService.utils.getSubdir(), 'reborn/')) {
         debug('redirect because admin host does not match');
 
         return _private.redirectUrl({

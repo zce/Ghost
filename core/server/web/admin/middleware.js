@@ -2,7 +2,7 @@ const urlService = require('../../services/url');
 
 function redirectAdminUrls(req, res, next) {
     const subdir = urlService.utils.getSubdir(),
-        ghostPathRegex = new RegExp(`^${subdir}/ghost/(.+)`),
+        ghostPathRegex = new RegExp(`^${subdir}/reborn/(.+)`),
         ghostPathMatch = req.originalUrl.match(ghostPathRegex);
 
     if (ghostPathMatch) {

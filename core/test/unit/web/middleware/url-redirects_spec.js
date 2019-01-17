@@ -116,10 +116,10 @@ describe('UNIT: url redirects', function () {
 
                 host = 'default.com:2368';
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.false();
-                res.redirect.calledWith(301, 'https://default.com:2368/ghost/').should.be.true();
+                res.redirect.calledWith(301, 'https://default.com:2368/reborn/').should.be.true();
                 res.set.called.should.be.true();
                 done();
             });
@@ -134,10 +134,10 @@ describe('UNIT: url redirects', function () {
 
                 host = 'default.com:2368';
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.false();
-                res.redirect.calledWith(301, 'https://admin.default.com:2368/ghost/').should.be.true();
+                res.redirect.calledWith(301, 'https://admin.default.com:2368/reborn/').should.be.true();
                 res.set.called.should.be.true();
                 done();
             });
@@ -152,10 +152,10 @@ describe('UNIT: url redirects', function () {
 
                 host = 'default.com:2368';
 
-                req.originalUrl = '/blog/ghost';
+                req.originalUrl = '/blog/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.false();
-                res.redirect.calledWith(301, 'https://admin.default.com:2368/blog/ghost/').should.be.true();
+                res.redirect.calledWith(301, 'https://admin.default.com:2368/blog/reborn/').should.be.true();
                 res.set.called.should.be.true();
 
                 req.secure = true;
@@ -177,14 +177,14 @@ describe('UNIT: url redirects', function () {
 
                 host = 'default.com:2368';
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 req.query = {
                     test: true
                 };
 
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.false();
-                res.redirect.calledWith(301, 'https://admin.default.com:2368/ghost/?test=true').should.be.true();
+                res.redirect.calledWith(301, 'https://admin.default.com:2368/reborn/?test=true').should.be.true();
                 res.set.called.should.be.true();
                 done();
             });
@@ -199,14 +199,14 @@ describe('UNIT: url redirects', function () {
 
                 host = 'default.com:2368';
 
-                req.originalUrl = '/ghost/something?a=b';
+                req.originalUrl = '/reborn/something?a=b';
                 req.query = {
                     a: 'b'
                 };
 
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.false();
-                res.redirect.calledWith(301, 'https://admin.default.com:2368/ghost/something/?a=b').should.be.true();
+                res.redirect.calledWith(301, 'https://admin.default.com:2368/reborn/something/?a=b').should.be.true();
                 res.set.called.should.be.true();
                 done();
             });
@@ -221,10 +221,10 @@ describe('UNIT: url redirects', function () {
 
                 host = 'default.com:2368';
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.false();
-                res.redirect.calledWith(301, 'https://default.com:2368/ghost/').should.be.true();
+                res.redirect.calledWith(301, 'https://default.com:2368/reborn/').should.be.true();
                 res.set.called.should.be.true();
 
                 res.redirect.reset();
@@ -329,7 +329,7 @@ describe('UNIT: url redirects', function () {
 
                 host = 'default.com:2368';
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.true();
                 res.redirect.called.should.be.false();
@@ -344,7 +344,7 @@ describe('UNIT: url redirects', function () {
 
                 host = 'localhost:2368';
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
                 next.called.should.be.true();
                 res.redirect.called.should.be.false();
@@ -363,7 +363,7 @@ describe('UNIT: url redirects', function () {
                 host = 'something.com';
                 req.secure = false;
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
                 res.redirect.called.should.be.false();
                 res.set.called.should.be.false();
@@ -382,7 +382,7 @@ describe('UNIT: url redirects', function () {
                 host = 'something.com';
                 req.secure = true;
 
-                req.originalUrl = '/ghost';
+                req.originalUrl = '/reborn';
                 redirect(req, res, next, getAdminRedirectUrl);
 
                 res.redirect.called.should.be.false();

@@ -50,14 +50,14 @@ describe('Admin Routing', function () {
 
     describe('Assets', function () {
         it('should return 404 for unknown assets', function (done) {
-            request.get('/ghost/assets/not-found.js')
+            request.get('/reborn/assets/not-found.js')
                 .expect('Cache-Control', testUtils.cacheRules.private)
                 .expect(404)
                 .end(doEnd(done));
         });
 
         it('should retrieve built assets', function (done) {
-            request.get('/ghost/assets/vendor.js')
+            request.get('/reborn/assets/vendor.js')
                 .expect('Cache-Control', testUtils.cacheRules.year)
                 .expect(200)
                 .end(doEnd(done));
@@ -65,50 +65,50 @@ describe('Admin Routing', function () {
     });
 
     describe('Legacy Redirects', function () {
-        it('should redirect /logout/ to /ghost/#/signout/', function (done) {
+        it('should redirect /logout/ to /reborn/#/signout/', function (done) {
             request.get('/logout/')
-                .expect('Location', '/ghost/#/signout/')
+                .expect('Location', '/reborn/#/signout/')
                 .expect('Cache-Control', testUtils.cacheRules.year)
                 .expect(301)
                 .end(doEndNoAuth(done));
         });
 
-        it('should redirect /signout/ to /ghost/#/signout/', function (done) {
+        it('should redirect /signout/ to /reborn/#/signout/', function (done) {
             request.get('/signout/')
-                .expect('Location', '/ghost/#/signout/')
+                .expect('Location', '/reborn/#/signout/')
                 .expect('Cache-Control', testUtils.cacheRules.year)
                 .expect(301)
                 .end(doEndNoAuth(done));
         });
 
-        it('should redirect /signup/ to /ghost/#/signup/', function (done) {
+        it('should redirect /signup/ to /reborn/#/signup/', function (done) {
             request.get('/signup/')
-                .expect('Location', '/ghost/#/signup/')
+                .expect('Location', '/reborn/#/signup/')
                 .expect('Cache-Control', testUtils.cacheRules.year)
                 .expect(301)
                 .end(doEndNoAuth(done));
         });
 
         // Admin aliases
-        it('should redirect /signin/ to /ghost/', function (done) {
+        it('should redirect /signin/ to /reborn/', function (done) {
             request.get('/signin/')
-                .expect('Location', '/ghost/')
+                .expect('Location', '/reborn/')
                 .expect('Cache-Control', testUtils.cacheRules.year)
                 .expect(301)
                 .end(doEndNoAuth(done));
         });
 
-        it('should redirect /admin/ to /ghost/', function (done) {
+        it('should redirect /admin/ to /reborn/', function (done) {
             request.get('/admin/')
-                .expect('Location', '/ghost/')
+                .expect('Location', '/reborn/')
                 .expect('Cache-Control', testUtils.cacheRules.year)
                 .expect(301)
                 .end(doEndNoAuth(done));
         });
 
-        it('should redirect /GHOST/ to /ghost/', function (done) {
-            request.get('/GHOST/')
-                .expect('Location', '/ghost/')
+        it('should redirect /REBORN/ to /reborn/', function (done) {
+            request.get('/REBORN/')
+                .expect('Location', '/reborn/')
                 .expect(301)
                 .end(doEndNoAuth(done));
         });
@@ -133,14 +133,14 @@ describe('Admin Routing', function () {
         });
 
         it('should redirect admin access over non-HTTPS', function (done) {
-            request.get('/ghost/')
-                .expect('Location', /^https:\/\/localhost:2390\/ghost\//)
+            request.get('/reborn/')
+                .expect('Location', /^https:\/\/localhost:2390\/reborn\//)
                 .expect(301)
                 .end(doEnd(done));
         });
 
         it('should allow admin access over HTTPS', function (done) {
-            request.get('/ghost/')
+            request.get('/reborn/')
                 .set('X-Forwarded-Proto', 'https')
                 .expect(200)
                 .end(doEnd(done));

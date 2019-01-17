@@ -14,11 +14,11 @@ function getURL() {
 }
 
 function getSigninURL() {
-    return url.resolve(protocol + host + ':' + port, 'ghost/signin/');
+    return url.resolve(protocol + host + ':' + port, 'reborn/signin/');
 }
 
 function getAdminURL() {
-    return url.resolve(protocol + host + ':' + port, 'ghost/');
+    return url.resolve(protocol + host + ':' + port, 'reborn/');
 }
 
 function isISO8601(date) {
