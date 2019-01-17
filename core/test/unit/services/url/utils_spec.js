@@ -46,12 +46,12 @@ describe('Url', function () {
 
     describe('getProtectedSlugs', function () {
         it('defaults', function () {
-            urlService.utils.getProtectedSlugs().should.eql(['ghost', 'rss', 'amp']);
+            urlService.utils.getProtectedSlugs().should.eql(['ghost', 'api', 'rss', 'amp']);
         });
 
         it('url has subdir', function () {
             configUtils.set({url: 'http://my-ghost-blog.com/blog'});
-            urlService.utils.getProtectedSlugs().should.eql(['ghost', 'rss', 'amp', 'blog']);
+            urlService.utils.getProtectedSlugs().should.eql(['ghost', 'api', 'rss', 'amp', 'blog']);
         });
     });
 
@@ -440,7 +440,7 @@ describe('Url', function () {
 
         ['v0.1', 'v2'].forEach((apiVersion) => {
             function getApiPath(options) {
-                const baseAPIPath = '/ghost/api/';
+                const baseAPIPath = '/api/';
 
                 switch (options.version) {
                     case 'v0.1':
@@ -599,7 +599,7 @@ describe('Url', function () {
                 url: 'https://my-ghost-blog.com'
             });
 
-            urlService.utils.urlFor('api', {cors: true, version: "v2", versionType: 'content'}, true).should.eql('https://my-ghost-blog.com/ghost/api/v2/content/');
+            urlService.utils.urlFor('api', {cors: true, version: "v2", versionType: 'content'}, true).should.eql('https://my-ghost-blog.com/api/v2/content/');
         });
 
         it('api: with active version and admin true, blog url is https: should return active admin api path', function () {
@@ -607,7 +607,7 @@ describe('Url', function () {
                 url: 'https://my-ghost-blog.com'
             });
 
-            urlService.utils.urlFor('api', {cors: true, version: "v2", versionType: 'admin'}, true).should.eql('https://my-ghost-blog.com/ghost/api/v2/admin/');
+            urlService.utils.urlFor('api', {cors: true, version: "v2", versionType: 'admin'}, true).should.eql('https://my-ghost-blog.com/api/v2/admin/');
         });
     });
 

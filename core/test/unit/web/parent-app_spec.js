@@ -37,7 +37,7 @@ describe('parent app', function () {
     it('should mount 3 apps and assign correct routes to them', function () {
         parentApp();
 
-        use.calledWith('/ghost/api').should.be.true();
+        use.calledWith('/api').should.be.true();
         use.calledWith('/ghost').should.be.true();
 
         apiSpy.called.should.be.true();

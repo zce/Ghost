@@ -2,7 +2,7 @@ const url = require('url');
 const _ = require('lodash');
 const testUtils = require('../../../../utils');
 const schema = require('../../../../../server/data/schema').tables;
-const API_URL = '/ghost/api/v2/content/';
+const API_URL = '/api/v2/content/';
 
 const expectedProperties = {
     // API top level

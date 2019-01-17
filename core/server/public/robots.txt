@@ -1,4 +1,5 @@
 User-agent: *
 Sitemap: {{blog-url}}/sitemap.xml
 Disallow: /ghost/
+Disallow: /api/
 Disallow: /p/
