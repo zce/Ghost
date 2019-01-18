@@ -44,7 +44,7 @@ module.exports = function setupParentApp(options = {}) {
     parentApp.use('/ghost/api', require('./api')());
 
     // ADMIN
-    parentApp.use('/ghost', require('./admin')());
+    parentApp.use('/reborn', require('./admin')());
 
     // BLOG
     parentApp.use(require('./site')(options));

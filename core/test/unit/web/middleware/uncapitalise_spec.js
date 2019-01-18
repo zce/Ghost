@@ -24,7 +24,7 @@ describe('Middleware: uncapitalise', function () {
 
     describe('Signup or reset request', function () {
         it('[signup] does nothing if there are no capitals in req.path', function (done) {
-            req.path = '/ghost/signup/';
+            req.path = '/reborn/signup/';
             uncapitalise(req, res, next);
 
             next.calledOnce.should.be.true();
@@ -32,7 +32,7 @@ describe('Middleware: uncapitalise', function () {
         });
 
         it('[signup] does nothing if there are no capitals in the baseUrl', function (done) {
-            req.baseUrl = '/ghost/signup/';
+            req.baseUrl = '/reborn/signup/';
             req.path = '';
             uncapitalise(req, res, next);
 
@@ -42,7 +42,7 @@ describe('Middleware: uncapitalise', function () {
 
         it('[signup] does nothing if there are no capitals except in a token', function (done) {
             req.baseUrl = '/blog';
-            req.path = '/ghost/signup/XEB123';
+            req.path = '/reborn/signup/XEB123';
 
             uncapitalise(req, res, next);
 
@@ -52,7 +52,7 @@ describe('Middleware: uncapitalise', function () {
 
         it('[reset] does nothing if there are no capitals except in a token', function (done) {
             req.baseUrl = '/blog';
-            req.path = '/ghost/reset/NCR3NjY4NzI1ODI1OHzlcmlzZHNAZ51haWwuY29tfEpWeGxRWHUzZ3Y0cEpQRkNYYzQvbUZyc2xFSVozU3lIZHZWeFJLRml6cY54';
+            req.path = '/reborn/reset/NCR3NjY4NzI1ODI1OHzlcmlzZHNAZ51haWwuY29tfEpWeGxRWHUzZ3Y0cEpQRkNYYzQvbUZyc2xFSVozU3lIZHZWeFJLRml6cY54';
             uncapitalise(req, res, next);
 
             next.calledOnce.should.be.true();
@@ -60,19 +60,19 @@ describe('Middleware: uncapitalise', function () {
         });
 
         it('[signup] redirects if there are capitals in req.path', function (done) {
-            req.path = '/ghost/SignUP/';
+            req.path = '/reborn/SignUP/';
             req.url = req.path;
 
             uncapitalise(req, res, next);
 
             next.called.should.be.false();
             res.redirect.calledOnce.should.be.true();
-            res.redirect.calledWith(301, '/ghost/signup/').should.be.true();
+            res.redirect.calledWith(301, '/reborn/signup/').should.be.true();
             done();
         });
 
         it('[signup] redirects if there are capitals in req.baseUrl', function (done) {
-            req.baseUrl = '/ghost/SignUP/';
+            req.baseUrl = '/reborn/SignUP/';
             req.path = '';
             req.url = req.path;
             req.originalUrl = req.baseUrl + req.path;
@@ -81,13 +81,13 @@ describe('Middleware: uncapitalise', function () {
 
             next.called.should.be.false();
             res.redirect.calledOnce.should.be.true();
-            res.redirect.calledWith(301, '/ghost/signup/').should.be.true();
+            res.redirect.calledWith(301, '/reborn/signup/').should.be.true();
             done();
         });
 
         it('[signup] redirects correctly if there are capitals in req.path and req.baseUrl', function (done) {
             req.baseUrl = '/Blog';
-            req.path = '/ghosT/signUp/';
+            req.path = '/reborN/signUp/';
             req.url = req.path;
             req.originalUrl = req.baseUrl + req.path;
 
@@ -95,25 +95,25 @@ describe('Middleware: uncapitalise', function () {
 
             next.called.should.be.false();
             res.redirect.calledOnce.should.be.true();
-            res.redirect.calledWith(301, '/blog/ghost/signup/').should.be.true();
+            res.redirect.calledWith(301, '/blog/reborn/signup/').should.be.true();
             done();
         });
 
         it('[signup] redirects correctly with capitals in req.path if there is a token', function (done) {
-            req.path = '/ghosT/sigNup/XEB123';
+            req.path = '/reborN/sigNup/XEB123';
             req.url = req.path;
 
             uncapitalise(req, res, next);
 
             next.called.should.be.false();
             res.redirect.calledOnce.should.be.true();
-            res.redirect.calledWith(301, '/ghost/signup/XEB123').should.be.true();
+            res.redirect.calledWith(301, '/reborn/signup/XEB123').should.be.true();
             done();
         });
 
         it('[reset] redirects correctly with capitals in req.path & req.baseUrl if there is a token', function (done) {
             req.baseUrl = '/Blog';
-            req.path = '/Ghost/Reset/NCR3NjY4NzI1ODI1OHzlcmlzZHNAZ51haWwuY29tfEpWeGxRWHUzZ3Y0cEpQRkNYYzQvbUZyc2xFSVozU3lIZHZWeFJLRml6cY54';
+            req.path = '/Reborn/Reset/NCR3NjY4NzI1ODI1OHzlcmlzZHNAZ51haWwuY29tfEpWeGxRWHUzZ3Y0cEpQRkNYYzQvbUZyc2xFSVozU3lIZHZWeFJLRml6cY54';
             req.url = req.path;
             req.originalUrl = req.baseUrl + req.path;
 
@@ -121,7 +121,7 @@ describe('Middleware: uncapitalise', function () {
 
             next.called.should.be.false();
             res.redirect.calledOnce.should.be.true();
-            res.redirect.calledWith(301, '/blog/ghost/reset/NCR3NjY4NzI1ODI1OHzlcmlzZHNAZ51haWwuY29tfEpWeGxRWHUzZ3Y0cEpQRkNYYzQvbUZyc2xFSVozU3lIZHZWeFJLRml6cY54').should.be.true();
+            res.redirect.calledWith(301, '/blog/reborn/reset/NCR3NjY4NzI1ODI1OHzlcmlzZHNAZ51haWwuY29tfEpWeGxRWHUzZ3Y0cEpQRkNYYzQvbUZyc2xFSVozU3lIZHZWeFJLRml6cY54').should.be.true();
             done();
         });
     });
