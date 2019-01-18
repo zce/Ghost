@@ -1610,6 +1610,13 @@ electron-to-chromium@^1.2.7:
   version "1.3.90"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.90.tgz#b4c51b8303beff18f2b74817402bf4898e09558a"
 
+embed-parser@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/embed-parser/-/embed-parser-0.1.2.tgz#5c52054545770c3650bfa8a3cba91300160f1a67"
+  integrity sha512-8u8wrZw2NeT8S7L8jBJ9pFWZp0Vy2QNOI9Wzx+uc4i6CLxkHdCzCAvDgLzGMxCzfRpEilmkP+u8UvkEBU4GyWg==
+  dependencies:
+    oembed-parser "^1.2.1"
+
 ember-rfc176-data@^0.3.5:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/ember-rfc176-data/-/ember-rfc176-data-0.3.5.tgz#f630e550572c81a5e5c7220f864c0f06eee9e977"
@@ -4416,7 +4423,7 @@ node-abi@^2.2.0:
   dependencies:
     semver "^5.4.1"
 
-node-fetch@^2.1.2:
+node-fetch@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
 
@@ -4659,11 +4666,12 @@ object.pick@^1.2.0, object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
-"oembed-parser@https://github.com/kevinansfield/oembed-parser/tarball/80af3dc41059bcc0caa80db010265a811a4267c7":
-  version "1.1.1"
-  resolved "https://github.com/kevinansfield/oembed-parser/tarball/80af3dc41059bcc0caa80db010265a811a4267c7#42f417d83d79ee0d8631546e171e50d5b2f14027"
+oembed-parser@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/oembed-parser/-/oembed-parser-1.2.1.tgz#1c9552e67943821c705c522dcb1720f22db7f5c7"
+  integrity sha512-PSjgqpkmKOL8EyikYdnBlFq+/kOHd0PinIof+jSE725m4xmIlN9QZREos8vx8QO8Pd1sv4ruixqkB/MONrVysg==
   dependencies:
-    node-fetch "^2.1.2"
+    node-fetch "^2.3.0"
     promise-wtf "^1.2.4"
 
 on-finished@^2.3.0, on-finished@~2.3.0:
