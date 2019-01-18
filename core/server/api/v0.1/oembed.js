@@ -1,5 +1,5 @@
 const common = require('../../lib/common');
-const {extract, hasProvider} = require('oembed-parser');
+const {extract, hasProvider} = require('embed-parser');
 const Promise = require('bluebird');
 const request = require('../../lib/request');
 const cheerio = require('cheerio');
