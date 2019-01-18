@@ -2,7 +2,7 @@ import './styles/members.css';
 import {IconEmail, IconLock, IconName, IconClose, IconError} from './components/icons';
 import { Component } from 'preact';
 const origin = new URL(window.location).origin;
-const membersApi = location.pathname.replace(/\/members\/auth\/?$/, '/ghost/api/v2/members');
+const membersApi = location.pathname.replace(/\/members\/auth\/?$/, '/api/v2/members');
 const storage = window.localStorage;
 var layer0 = require('./layer0');
 
@@ -232,7 +232,7 @@ export default class App extends Component {
                 <div className="gm-logo"></div>
                 <div className="gm-auth-header">
                     <h1>{ mainTitle }</h1>
-                    {(ctaTitle ? 
+                    {(ctaTitle ?
                         <div className="flex items-baseline mt2">
                             <h4>{ ctaTitle }</h4>
                             <a href="javascript:;"

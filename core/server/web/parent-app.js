@@ -41,7 +41,7 @@ module.exports = function setupParentApp(options = {}) {
 
     // API
     // @TODO: finish refactoring the API app
-    parentApp.use('/ghost/api', require('./api')());
+    parentApp.use('/api', require('./api')());
 
     // ADMIN
     parentApp.use('/reborn', require('./admin')());
