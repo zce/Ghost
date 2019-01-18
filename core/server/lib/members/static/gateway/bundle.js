@@ -24,7 +24,7 @@
     }
 
     // @TODO this needs to be configurable
-    const membersApi = location.pathname.replace(/\/members\/gateway\/?$/, '/ghost/api/v2/members');
+    const membersApi = location.pathname.replace(/\/members\/gateway\/?$/, '/api/v2/members');
     function getToken({audience}) {
         return fetch(`${membersApi}/token`, {
             method: 'POST',
