@@ -1,4 +1,5 @@
 User-agent: *
 Sitemap: {{blog-url}}/sitemap.xml
 Disallow: /reborn/
+Disallow: /api/
 Disallow: /p/

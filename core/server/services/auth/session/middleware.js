@@ -39,7 +39,7 @@ const getSession = (req, res, next) => {
             cookie: {
                 maxAge: constants.SIX_MONTH_MS,
                 httpOnly: true,
-                path: urlService.utils.getSubdir() + '/ghost',
+                path: urlService.utils.getSubdir() + '/api',
                 sameSite: 'lax',
                 secure: urlService.utils.isSSL(config.get('url'))
             }

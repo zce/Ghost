@@ -468,7 +468,7 @@ describe('Public API', function () {
                 }
 
                 res.headers.vary.should.eql('Origin, Accept, Accept-Encoding');
-                res.headers.location.should.eql('http://localhost:9999/ghost/api/v0.1/posts/?client_id=ghost-test&client_secret=not_available');
+                res.headers.location.should.eql('http://localhost:9999/api/v0.1/posts/?client_id=ghost-test&client_secret=not_available');
                 should.exist(res.headers['access-control-allow-origin']);
                 should.not.exist(res.headers['x-cache-invalidate']);
                 done();

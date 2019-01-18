@@ -384,7 +384,7 @@ describe('Posts', function () {
                 }
 
                 res.headers.vary.should.eql('Accept, Accept-Encoding');
-                res.headers.location.should.eql(`http://localhost:9999/ghost/api/v2/content/posts/?key=${validKey}`);
+                res.headers.location.should.eql(`http://localhost:9999/api/v2/content/posts/?key=${validKey}`);
                 should.exist(res.headers['access-control-allow-origin']);
                 should.not.exist(res.headers['x-cache-invalidate']);
                 done();
