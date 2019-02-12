@@ -1506,6 +1506,13 @@ embed-parser@^0.1.3:
   dependencies:
     oembed-parser "^1.2.2"
 
+embed-parser@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/embed-parser/-/embed-parser-0.1.2.tgz#5c52054545770c3650bfa8a3cba91300160f1a67"
+  integrity sha512-8u8wrZw2NeT8S7L8jBJ9pFWZp0Vy2QNOI9Wzx+uc4i6CLxkHdCzCAvDgLzGMxCzfRpEilmkP+u8UvkEBU4GyWg==
+  dependencies:
+    oembed-parser "^1.2.1"
+
 ember-rfc176-data@^0.3.5:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/ember-rfc176-data/-/ember-rfc176-data-0.3.6.tgz#7138db8dfccec39c9a832adfbd4c49d670028907"
